@@ -19,6 +19,8 @@ app.set('case sensitive routing',true)
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.use(express.static('./public'));
+
 
 app.get('/products', (req,res) => {
     res.send('obteniendo productos')
