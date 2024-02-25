@@ -13,6 +13,8 @@ let products = [
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.set('appName','Express course')
+
 app.get('/products', (req,res) => {
     res.send('obteniendo productos')
     res.json(products)
