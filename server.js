@@ -2,11 +2,13 @@ const express = require('express')
 const morgan = require('morgan')
 
 const app = express();
+const products = [];
 
 app.use(morgan('dev'));
 
 app.get('/products', (req,res) => {
-    res.send('obteniendo productos')
+    // res.send('obteniendo productos')
+    res.json(products)
 })
 
 app.post('/products', (req,res) => {
