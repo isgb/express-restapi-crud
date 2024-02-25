@@ -10,10 +10,15 @@ let products = [
     }
 ];
 
+// settings
+app.set('appName','Express course')
+app.set('port',3000)
+app.set('case sensitive routing',true)
+
+// middlewares
 app.use(morgan('dev'));
 app.use(express.json());
 
-app.set('appName','Express course')
 
 app.get('/products', (req,res) => {
     res.send('obteniendo productos')
@@ -77,5 +82,5 @@ app.get('/products/:id', (req,res) => {
     res.json(productFound)
 })
 
-app.listen(3000);
-console.log(`SERVER ON PORT ${3000}`)
+app.listen(app.get('port'));
+console.log(`SERVER ${app.get('appName')} ON PORT ${app.get('port')}`)
